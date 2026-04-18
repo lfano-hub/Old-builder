@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trellis — Editor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;500;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="editor.css">
+</head>
+<body class="editor-body">
+
+  <!-- Top Bar -->
+  <header class="editor-topbar">
+    <a href="index.html" class="topbar-logo">Trellis<span>.</span></a>
+
+    <div class="topbar-center">
+      <div class="undo-redo-btns">
+        <button class="undo-redo-btn" id="undoBtn" title="Undo (Ctrl+Z)" disabled>↩</button>
+        <button class="undo-redo-btn" id="redoBtn" title="Redo (Ctrl+Y)" disabled>↪</button>
+      </div>
+      <div class="zoom-controls">
+        <button class="zoom-btn" id="zoomOut" title="Zoom out">−</button>
+        <span class="zoom-label" id="zoomLabel">100%</span>
+        <button class="zoom-btn" id="zoomIn" title="Zoom in">+</button>
+      </div>
+      <div class="device-toggle">
+        <button class="device-btn active" data-device="desktop" title="Desktop">
+          <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+          </svg>
+        </button>
+        <button class="device-btn" data-device="tablet" title="Tablet">
+          <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="18" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </button>
+        <button class="device-btn" data-device="mobile" title="Mobile">
+          <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <rect x="6" y="2" width="12" height="20" rx="2"/><circle cx="12" cy="18" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="topbar-actions">
+      <div class="save-status" id="saveStatus">All saved</div>
+      <input class="project-name-input" id="projectName" value="My Site" spellcheck="false">
+      <button class="topbar-btn topbar-icon-btn" id="shortcutsBtn" title="Keyboard shortcuts">⌨</button>
+      <button class="topbar-btn topbar-icon-btn" id="brandKitBtn" title="Brand Kit">🎨</button>
+      <button class="topbar-btn topbar-icon-btn" id="seoBtn" title="SEO Settings">📈</button>
+      <button class="topbar-btn topbar-icon-btn" id="historyBtn" title="Version History">🕐</button>
+      <button class="topbar-btn" id="newSiteBtn">New</button>
+      <button class="topbar-btn" id="previewBtn">Preview</button>
+      <button class="topbar-btn topbar-btn-export" id="exportBtn">⬇ Export</button>
+      <button class="topbar-btn topbar-btn-blue" id="publishBtn">Publish ↗</button>
+    </div>
+  </header>
+
+  <div class="editor-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+      <!-- Sidebar Tabs -->
+      <div class="sidebar-tabs">
+        <button class="sidebar-tab active" data-tab="blocks">Blocks</button>
+        <button class="sidebar-tab" data-tab="pages">Pages</button>
+        <button class="sidebar-tab" data-tab="layers">Layers</button>
+      </div>
+
+      <!-- BLOCKS TAB -->
+      <div class="sidebar-tab-content" id="tabBlocks">
+
+        <div class="sidebar-search-wrap">
+          <input class="sidebar-search" id="blockSearch" placeholder="🔍  Search blocks…" autocomplete="off">
+        </div>
+
+        <div class="sidebar-section" id="savedTemplatesSection" style="display:none;">
+          <div class="sidebar-label">My Templates</div>
+          <div class="block-list" id="savedTemplatesList"></div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-label">Layout</div>
+          <div class="block-list">
+            <button class="block-btn" data-type="navbar"><span class="block-icon">☰</span>Navbar</button>
+            <button class="block-btn" data-type="footer"><span class="block-icon">▬</span>Footer</button>
+            <button class="block-btn" data-type="divider"><span class="block-icon">—</span>Divider</button>
+            <button class="block-btn" data-type="spacer"><span class="block-icon">↕</span>Spacer</button>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-label">Content</div>
+          <div class="block-list">
+            <button class="block-btn" data-type="hero"><span class="block-icon">⬛</span>Hero</button>
+            <button class="block-btn" data-type="text"><span class="block-icon">T</span>Text</button>
+            <button class="block-btn" data-type="columns"><span class="block-icon">⊞</span>Columns</button>
+            <button class="block-btn" data-type="cta"><span class="block-icon">→</span>Call to Action</button>
+            <button class="block-btn" data-type="faq"><span class="block-icon">?</span>FAQ</button>
+            <button class="block-btn" data-type="features"><span class="block-icon">✦</span>Features</button>
+            <button class="block-btn" data-type="stats"><span class="block-icon">#</span>Stats</button>
+            <button class="block-btn" data-type="team"><span class="block-icon">👥</span>Team</button>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-label">Media</div>
+          <div class="block-list">
+            <button class="block-btn" data-type="image"><span class="block-icon">🖼</span>Image</button>
+            <button class="block-btn" data-type="gallery"><span class="block-icon">⊟</span>Gallery</button>
+            <button class="block-btn" data-type="video"><span class="block-icon">▶</span>Video Embed</button>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-label">Social Proof</div>
+          <div class="block-list">
+            <button class="block-btn" data-type="testimonials"><span class="block-icon">❝</span>Testimonials</button>
+            <button class="block-btn" data-type="logo-bar"><span class="block-icon">◈</span>Logo Bar</button>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-label">E-Commerce</div>
+          <div class="block-list">
+            <button class="block-btn" data-type="product-grid"><span class="block-icon">🛍</span>Product Grid</button>
+            <button class="block-btn" data-type="pricing"><span class="block-icon">💲</span>Pricing Table</button>
+            <button class="block-btn" data-type="buy-button"><span class="block-icon">⚡</span>Buy Button</button>
+            <button class="block-btn" data-type="cart-summary"><span class="block-icon">🛒</span>Cart Summary</button>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-label">Forms</div>
+          <div class="block-list">
+            <button class="block-btn" data-type="contact-form"><span class="block-icon">✉</span>Contact Form</button>
+            <button class="block-btn" data-type="email-signup"><span class="block-icon">📬</span>Email Signup</button>
+          </div>
+        </div>
+
+        <div class="sidebar-section" id="propertiesPanel" style="display:none;">
+          <div class="sidebar-label">Properties</div>
+          <div id="propertiesContent"></div>
+        </div>
+
+      </div>
+
+      <!-- PAGES TAB -->
+      <div class="sidebar-tab-content hidden" id="tabPages">
+
+        <div class="sidebar-section">
+          <div class="sidebar-label-row">
+            <div class="sidebar-label" style="margin-bottom:0;">Pages</div>
+            <button class="add-page-btn" id="addPageBtn" title="Add new page">＋</button>
+          </div>
+          <div class="page-list" id="pageList">
+            <!-- populated by JS -->
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-label">Quick Add</div>
+          <div class="page-type-list">
+            <button class="page-type-btn" data-pagetype="product">📦 Product Page</button>
+            <button class="page-type-btn" data-pagetype="cart">🛒 Cart / Checkout</button>
+            <button class="page-type-btn" data-pagetype="about">ℹ About</button>
+            <button class="page-type-btn" data-pagetype="blog">📝 Blog Post</button>
+            <button class="page-type-btn" data-pagetype="contact">✉ Contact</button>
+            <button class="page-type-btn" data-pagetype="custom">✦ Blank Page</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- LAYERS TAB -->
+      <div class="sidebar-tab-content hidden" id="tabLayers">
+        <div class="sidebar-section">
+          <div class="sidebar-label">Layers (this page)</div>
+          <div class="layers-list" id="layersList"></div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- Canvas Area -->
+    <main class="canvas-area">
+      <div class="page-tab-bar" id="pageTabBar">
+        <!-- page tabs populated by JS -->
+      </div>
+      <div class="canvas-frame" id="canvasFrame">
+        <div class="canvas" id="canvas">
+          <div class="canvas-empty" id="canvasEmpty">
+            <div class="canvas-empty-icon">＋</div>
+            <p>Add a block from the sidebar<br>to start building</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- New Site Modal -->
+  <div class="modal-overlay" id="newSiteOverlay">
+    <div class="modal" style="max-width:380px;">
+      <h2 style="margin-bottom:8px;">Start a new site?</h2>
+      <p style="font-size:14px;color:#7A6B5A;margin-bottom:28px;line-height:1.5;">This will clear your current project and all pages.</p>
+      <div style="display:flex;gap:10px;">
+        <button class="modal-submit" id="confirmNewSite" style="background:#C05C2A;">Yes, clear it</button>
+        <button class="modal-submit" id="cancelNewSite" style="background:#F5EFE6;color:#2D2416;">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Page Modal -->
+  <div class="modal-overlay" id="addPageOverlay">
+    <div class="modal" style="max-width:440px;">
+      <button class="modal-close" id="addPageModalClose">✕</button>
+      <h2 style="margin-bottom:6px;">Add a new page</h2>
+      <p style="font-size:14px;color:#7A6B5A;margin-bottom:20px;line-height:1.5;">Choose a type to get a head start, or go fully blank.</p>
+      <div class="page-type-grid" id="pageTypeGrid">
+        <button class="page-type-card" data-pagetype="landing">🏠<span>Landing</span></button>
+        <button class="page-type-card" data-pagetype="product">📦<span>Product</span></button>
+        <button class="page-type-card" data-pagetype="cart">🛒<span>Cart</span></button>
+        <button class="page-type-card" data-pagetype="about">ℹ<span>About</span></button>
+        <button class="page-type-card" data-pagetype="blog">📝<span>Blog</span></button>
+        <button class="page-type-card" data-pagetype="contact">✉<span>Contact</span></button>
+        <button class="page-type-card" data-pagetype="custom">✦<span>Blank</span></button>
+      </div>
+      <div style="margin-top:16px;">
+        <label style="font-size:12px;color:#7A6B5A;display:block;margin-bottom:6px;font-weight:500;">Page name</label>
+        <input id="newPageNameInput" class="prop-input" placeholder="e.g. About Us" value="">
+      </div>
+      <button class="modal-submit" id="confirmAddPage" style="margin-top:16px;">Add Page →</button>
+    </div>
+  </div>
+
+  <!-- Export Modal -->
+  <div class="modal-overlay" id="exportOverlay">
+    <div class="modal" style="max-width:500px;">
+      <button class="modal-close" id="exportModalClose">✕</button>
+      <div class="export-icon">⬇</div>
+      <h2 style="margin-bottom:6px;">Export your site</h2>
+      <p style="font-size:14px;color:#7A6B5A;margin-bottom:24px;line-height:1.5;">
+        Downloads a clean, standalone HTML file — ready to open in any browser or upload to any host.
+      </p>
+      <div class="export-meta">
+        <div class="export-meta-item">
+          <span class="export-meta-label">Project</span>
+          <span class="export-meta-value" id="exportProjectName">My Site</span>
+        </div>
+        <div class="export-meta-item">
+          <span class="export-meta-label">Pages</span>
+          <span class="export-meta-value" id="exportPageCount">1</span>
+        </div>
+        <div class="export-meta-item">
+          <span class="export-meta-label">Blocks</span>
+          <span class="export-meta-value" id="exportBlockCount">0</span>
+        </div>
+      </div>
+      <button class="modal-submit" id="confirmExport">Download HTML file</button>
+    </div>
+  </div>
+
+  <!-- Context Menu -->
+  <div class="context-menu" id="contextMenu">
+    <button class="ctx-btn" data-ctx="duplicate">⧉ Duplicate</button>
+    <button class="ctx-btn" data-ctx="copy-style">🎨 Copy Style</button>
+    <button class="ctx-btn" data-ctx="paste-style">📋 Paste Style</button>
+    <button class="ctx-btn" data-ctx="save-template">⭐ Save as Template</button>
+    <button class="ctx-btn" data-ctx="set-anchor">⚓ Set Anchor ID</button>
+    <button class="ctx-btn" data-ctx="set-bg-image">🖼 Background Image</button>
+    <div class="ctx-divider"></div>
+    <button class="ctx-btn" data-ctx="move-up">↑ Move Up</button>
+    <button class="ctx-btn" data-ctx="move-down">↓ Move Down</button>
+    <div class="ctx-divider"></div>
+    <button class="ctx-btn ctx-danger" data-ctx="delete">✕ Delete Block</button>
+  </div>
+
+  <!-- SEO Modal -->
+  <div class="modal-overlay" id="seoOverlay">
+    <div class="modal" style="max-width:480px;">
+      <button class="modal-close" id="seoModalClose">✕</button>
+      <h2 style="margin-bottom:6px;">SEO Settings</h2>
+      <p style="font-size:13px;color:#7A6B5A;margin-bottom:20px;">These settings control how your page appears in search results and when shared.</p>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div><label class="prop-label">Page Title</label><input class="prop-input" id="seoTitle" placeholder="My Business — Homepage"></div>
+        <div><label class="prop-label">Meta Description</label><textarea class="prop-input" id="seoDesc" rows="3" placeholder="A short description of this page (150–160 chars recommended)" style="resize:vertical;"></textarea></div>
+        <div><label class="prop-label">OG / Social Image URL</label><input class="prop-input" id="seoOgImage" placeholder="https://yoursite.com/og-image.jpg"></div>
+        <div><label class="prop-label">Canonical URL</label><input class="prop-input" id="seoCanonical" placeholder="https://yoursite.com/page"></div>
+      </div>
+      <button class="modal-submit" id="seoSave" style="margin-top:20px;">Save SEO Settings</button>
+    </div>
+  </div>
+
+  <!-- Brand Kit Modal -->
+  <div class="modal-overlay" id="brandKitOverlay">
+    <div class="modal" style="max-width:480px;">
+      <button class="modal-close" id="brandKitClose">✕</button>
+      <h2 style="margin-bottom:6px;">Brand Kit</h2>
+      <p style="font-size:13px;color:#7A6B5A;margin-bottom:20px;">Save your brand colors and fonts. Apply them to any block instantly.</p>
+      <div style="margin-bottom:16px;">
+        <label class="prop-label">Brand Name / Logo Text</label>
+        <input class="prop-input" id="brandName" placeholder="Your Business Name">
+      </div>
+      <div style="margin-bottom:16px;">
+        <label class="prop-label">Brand Colors</label>
+        <div class="brand-color-row" id="brandColorRow"></div>
+        <button class="add-brand-color-btn" id="addBrandColor">+ Add color</button>
+      </div>
+      <div style="margin-bottom:20px;">
+        <label class="prop-label">Primary Font</label>
+        <select class="prop-input" id="brandFont">
+          <option value="">— Choose a font —</option>
+        </select>
+      </div>
+      <div style="display:flex;gap:10px;">
+        <button class="modal-submit" id="brandKitSave">Save Brand Kit</button>
+        <button class="modal-submit" id="brandKitApply" style="background:#4A7C59;">Apply to All Blocks</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Version History Modal -->
+  <div class="modal-overlay" id="historyOverlay">
+    <div class="modal" style="max-width:460px;">
+      <button class="modal-close" id="historyClose">✕</button>
+      <h2 style="margin-bottom:6px;">Version History</h2>
+      <p style="font-size:13px;color:#7A6B5A;margin-bottom:16px;">Restore any previous save. Up to 20 versions kept.</p>
+      <div class="version-list" id="versionList"></div>
+    </div>
+  </div>
+
+  <!-- Keyboard Shortcuts Modal -->
+  <div class="modal-overlay" id="shortcutsOverlay">
+    <div class="modal" style="max-width:460px;">
+      <button class="modal-close" id="shortcutsClose">✕</button>
+      <h2 style="margin-bottom:16px;">Keyboard Shortcuts</h2>
+      <div class="shortcuts-grid">
+        <div class="shortcut-row"><span>Undo</span><kbd>Ctrl Z</kbd></div>
+        <div class="shortcut-row"><span>Redo</span><kbd>Ctrl Shift Z</kbd></div>
+        <div class="shortcut-row"><span>Duplicate block</span><kbd>Ctrl D</kbd></div>
+        <div class="shortcut-row"><span>Delete block</span><kbd>Del / Backspace</kbd></div>
+        <div class="shortcut-row"><span>Move block up</span><kbd>Ctrl ↑</kbd></div>
+        <div class="shortcut-row"><span>Move block down</span><kbd>Ctrl ↓</kbd></div>
+        <div class="shortcut-row"><span>Zoom in</span><kbd>Ctrl +</kbd></div>
+        <div class="shortcut-row"><span>Zoom out</span><kbd>Ctrl −</kbd></div>
+        <div class="shortcut-row"><span>Reset zoom</span><kbd>Ctrl 0</kbd></div>
+        <div class="shortcut-row"><span>Preview site</span><kbd>Ctrl P</kbd></div>
+        <div class="shortcut-row"><span>Save</span><kbd>Ctrl S</kbd></div>
+        <div class="shortcut-row"><span>Deselect</span><kbd>Esc</kbd></div>
+        <div class="shortcut-row"><span>Multi-select</span><kbd>Ctrl Click</kbd></div>
+        <div class="shortcut-row"><span>Context menu</span><kbd>Right Click</kbd></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="editor.js"></script>
+</body>
+</html>

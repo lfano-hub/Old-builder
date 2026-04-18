@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trellis — Let's build your site</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="onboarding.css">
+</head>
+<body class="onboarding-body">
+
+  <div class="ob-shell">
+
+    <a href="index.html" class="ob-logo">Trellis<span>.</span></a>
+
+    <div class="ob-progress">
+      <div class="ob-progress-bar">
+        <div class="ob-progress-fill" id="progressFill"></div>
+      </div>
+      <div class="ob-progress-label" id="progressLabel">Step 1 of 5</div>
+    </div>
+
+    <div class="ob-steps" id="obSteps">
+
+      <!-- Step 1: Business type -->
+      <div class="ob-step active" data-step="1">
+        <div class="ob-step-header">
+          <h1>What kind of business are you?</h1>
+          <p>We'll set up the right blocks and templates for you.</p>
+        </div>
+        <div class="ob-options-grid" id="bizTypeGrid">
+          <button class="ob-option" data-value="restaurant">
+            <span class="ob-option-icon">🍽</span>
+            <span class="ob-option-label">Restaurant / Café</span>
+            <span class="ob-option-sub">Menu, hours, reservations</span>
+          </button>
+          <button class="ob-option" data-value="salon">
+            <span class="ob-option-icon">✂️</span>
+            <span class="ob-option-label">Salon / Spa</span>
+            <span class="ob-option-sub">Services, booking, gallery</span>
+          </button>
+          <button class="ob-option" data-value="shop">
+            <span class="ob-option-icon">🛍</span>
+            <span class="ob-option-label">Shop / Retail</span>
+            <span class="ob-option-sub">Products, store, online sales</span>
+          </button>
+          <button class="ob-option" data-value="contractor">
+            <span class="ob-option-icon">🔨</span>
+            <span class="ob-option-label">Trades / Contractor</span>
+            <span class="ob-option-sub">Plumber, builder, electrician</span>
+          </button>
+          <button class="ob-option" data-value="professional">
+            <span class="ob-option-icon">💼</span>
+            <span class="ob-option-label">Professional Service</span>
+            <span class="ob-option-sub">Lawyer, accountant, consultant</span>
+          </button>
+          <button class="ob-option" data-value="fitness">
+            <span class="ob-option-icon">💪</span>
+            <span class="ob-option-label">Fitness / Wellness</span>
+            <span class="ob-option-sub">Gym, trainer, yoga studio</span>
+          </button>
+          <button class="ob-option" data-value="creative">
+            <span class="ob-option-icon">🎨</span>
+            <span class="ob-option-label">Creative / Freelance</span>
+            <span class="ob-option-sub">Designer, photographer, artist</span>
+          </button>
+          <button class="ob-option" data-value="local-business">
+            <span class="ob-option-icon">📍</span>
+            <span class="ob-option-label">Other Local Business</span>
+            <span class="ob-option-sub">Any other small business</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: Primary goal -->
+      <div class="ob-step" data-step="2">
+        <div class="ob-step-header">
+          <h1>What's your main goal?</h1>
+          <p>We'll make sure your site is built around this.</p>
+        </div>
+        <div class="ob-options-grid ob-options-2col" id="goalGrid">
+          <button class="ob-option ob-option-wide" data-value="get-customers">
+            <span class="ob-option-icon">📣</span>
+            <span class="ob-option-label">Get more customers</span>
+            <span class="ob-option-sub">Show up online and get found by people nearby</span>
+          </button>
+          <button class="ob-option ob-option-wide" data-value="sell-online">
+            <span class="ob-option-icon">💳</span>
+            <span class="ob-option-label">Sell online</span>
+            <span class="ob-option-sub">Take orders, sell products or services</span>
+          </button>
+          <button class="ob-option ob-option-wide" data-value="share-info">
+            <span class="ob-option-icon">📋</span>
+            <span class="ob-option-label">Share info & build trust</span>
+            <span class="ob-option-sub">Hours, services, location, about us</span>
+          </button>
+          <button class="ob-option ob-option-wide" data-value="take-bookings">
+            <span class="ob-option-icon">📅</span>
+            <span class="ob-option-label">Take bookings / enquiries</span>
+            <span class="ob-option-sub">Contact forms, booking links, calls</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3: Style -->
+      <div class="ob-step" data-step="3">
+        <div class="ob-step-header">
+          <h1>What should your site feel like?</h1>
+          <p>Pick the vibe that fits your business.</p>
+        </div>
+        <div class="ob-style-grid" id="styleGrid">
+          <button class="ob-style-option" data-value="warm" data-bg="#FFFAF5" data-accent="#D4956A" data-dark="#2D2416">
+            <div class="ob-style-preview" style="background:#FFFAF5">
+              <div class="ob-sp-bar" style="background:#FAF6F0"></div>
+              <div class="ob-sp-hero" style="background:#FDF4EC">
+                <div class="ob-sp-line" style="background:#2D2416;width:60%"></div>
+                <div class="ob-sp-line" style="background:#D4956A;width:40%"></div>
+                <div class="ob-sp-btn" style="background:#D4956A"></div>
+              </div>
+            </div>
+            <div class="ob-style-info">
+              <strong>Warm & Welcoming</strong>
+              <span>Great for restaurants, salons, local shops</span>
+            </div>
+          </button>
+          <button class="ob-style-option" data-value="clean" data-bg="#F2F6FB" data-accent="#2563EB" data-dark="#0D0D0D">
+            <div class="ob-style-preview" style="background:#F2F6FB">
+              <div class="ob-sp-bar" style="background:#E8F0FB"></div>
+              <div class="ob-sp-hero" style="background:#EBF4FF">
+                <div class="ob-sp-line" style="background:#0D0D0D;width:60%"></div>
+                <div class="ob-sp-line" style="background:#93C5FD;width:40%"></div>
+                <div class="ob-sp-btn" style="background:#2563EB"></div>
+              </div>
+            </div>
+            <div class="ob-style-info">
+              <strong>Clean & Professional</strong>
+              <span>Great for professional services, contractors</span>
+            </div>
+          </button>
+          <button class="ob-style-option" data-value="bold" data-bg="#0D0D0D" data-accent="#4A7C59" data-dark="#FFFFFF">
+            <div class="ob-style-preview" style="background:#0D0D0D">
+              <div class="ob-sp-bar" style="background:#1C1C1E"></div>
+              <div class="ob-sp-hero" style="background:#1C1C1E">
+                <div class="ob-sp-line" style="background:#FFFFFF;width:60%"></div>
+                <div class="ob-sp-line" style="background:#4A7C59;width:40%"></div>
+                <div class="ob-sp-btn" style="background:#4A7C59"></div>
+              </div>
+            </div>
+            <div class="ob-style-info">
+              <strong>Bold & Premium</strong>
+              <span>Great for fitness, creative, nightlife</span>
+            </div>
+          </button>
+          <button class="ob-style-option" data-value="minimal" data-bg="#FFFFFF" data-accent="#1C1C1E" data-dark="#1C1C1E">
+            <div class="ob-style-preview" style="background:#FFFFFF;border:1px solid #F0F0F5">
+              <div class="ob-sp-bar" style="background:#F5F5F5"></div>
+              <div class="ob-sp-hero" style="background:#FAFAFA">
+                <div class="ob-sp-line" style="background:#1C1C1E;width:60%"></div>
+                <div class="ob-sp-line" style="background:#C7C7CC;width:40%"></div>
+                <div class="ob-sp-btn" style="background:#1C1C1E"></div>
+              </div>
+            </div>
+            <div class="ob-style-info">
+              <strong>Pure Minimal</strong>
+              <span>Great for professionals, consultants, portfolios</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 4: Business name -->
+      <div class="ob-step" data-step="4">
+        <div class="ob-step-header">
+          <h1>What's your business called?</h1>
+          <p>This goes on your site header and footer. You can change it anytime.</p>
+        </div>
+        <div class="ob-name-form">
+          <div class="ob-field">
+            <label class="ob-field-label">Business name</label>
+            <input class="ob-input" id="siteNameInput" type="text" placeholder="e.g. Mario's Pizzeria" maxlength="50" autocomplete="off">
+          </div>
+          <div class="ob-field">
+            <label class="ob-field-label">Tagline <span class="ob-optional">optional</span></label>
+            <input class="ob-input" id="taglineInput" type="text" placeholder="e.g. Authentic Italian, made fresh daily" maxlength="80" autocomplete="off">
+          </div>
+          <div class="ob-preview-card" id="namePreviewCard">
+            <div class="ob-preview-logo" id="previewLogo">Your Business</div>
+            <div class="ob-preview-tagline" id="previewTagline">Your tagline goes here</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5: Build method -->
+      <div class="ob-step" data-step="5">
+        <div class="ob-step-header">
+          <h1>How do you want to build?</h1>
+          <p>Either way, you'll be able to edit everything after.</p>
+        </div>
+        <div class="ob-options-grid ob-options-2col" id="buildMethodGrid">
+          <button class="ob-option ob-option-wide" data-value="ai-quick" id="aiQuickOption">
+            <span class="ob-option-icon">⚡</span>
+            <span class="ob-option-label">AI Quick Build</span>
+            <span class="ob-option-sub">Describe your business in one line — AI builds the whole site in 30 seconds</span>
+          </button>
+          <button class="ob-option ob-option-wide" data-value="ai-guided" id="aiGuidedOption">
+            <span class="ob-option-icon">✦</span>
+            <span class="ob-option-label">AI Guided Build</span>
+            <span class="ob-option-sub">Answer a few quick questions — AI builds a fully personalised site for you</span>
+          </button>
+          <button class="ob-option ob-option-wide" data-value="template" id="templateOption">
+            <span class="ob-option-icon">📐</span>
+            <span class="ob-option-label">Start from a Template</span>
+            <span class="ob-option-sub">Pick a design and edit it yourself — full control from the start</span>
+          </button>
+          <button class="ob-option ob-option-wide" data-value="blank" id="blankOption">
+            <span class="ob-option-icon">☐</span>
+            <span class="ob-option-label">Start Blank</span>
+            <span class="ob-option-sub">Build from scratch, block by block, your way</span>
+          </button>
+        </div>
+
+        <!-- AI Quick prompt (shown when ai-quick is selected) -->
+        <div id="aiQuickPrompt" style="display:none; margin-top:20px;">
+          <label class="ob-field-label">Describe your business in one line</label>
+          <input class="ob-input" id="aiQuickInput" type="text" placeholder="e.g. A warm Italian restaurant in Brooklyn with outdoor seating" maxlength="200" autocomplete="off">
+        </div>
+
+        <!-- API key row -->
+        <div id="aiKeyRow" style="display:none; margin-top:12px;">
+          <label class="ob-field-label">Anthropic API key</label>
+          <div style="display:flex;gap:10px;align-items:center;">
+            <input class="ob-input" id="apiKeyInput" type="password" placeholder="sk-ant-..." style="flex:1;" autocomplete="off">
+            <a href="https://console.anthropic.com" target="_blank" style="font-size:12px;color:#4A7C59;white-space:nowrap;font-weight:600;">Get key →</a>
+          </div>
+          <p style="font-size:11.5px;color:#B0A090;margin-top:6px;">Stored only in your browser. Never sent anywhere except Anthropic.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="ob-nav">
+      <button class="ob-btn-back" id="backBtn" style="visibility:hidden">← Back</button>
+      <button class="ob-btn-next" id="nextBtn" disabled>Continue →</button>
+    </div>
+
+  </div>
+
+  <script src="onboarding.js"></script>
+</body>
+</html>

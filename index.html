@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trellis — Build your site, beautifully</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="mainNav">
+    <a href="#" class="nav-logo">Trellis<span>.</span></a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+    </div>
+    <button class="nav-cta" id="navCta">Start free →</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="sq sq1" viewBox="0 0 200 60" fill="none"><path d="M10 30 Q40 5 70 30 Q100 55 130 30 Q160 5 190 30" stroke="#D4956A" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
+    <svg class="sq sq2" viewBox="0 0 120 120" fill="none"><circle cx="60" cy="60" r="54" stroke="#7FB069" stroke-width="2" fill="none" stroke-dasharray="8 6"/></svg>
+    <svg class="sq sq3" viewBox="0 0 80 80" fill="none"><path d="M12 12 L68 12 L68 68 L12 68 Z" stroke="#D4956A" stroke-width="2" fill="none" stroke-dasharray="5 5" stroke-linecap="round"/></svg>
+
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span>🌱</span> Built for small businesses
+        </div>
+        <h1 class="hero-h1">
+          Your business<br>
+          deserves a proper<br>
+          <em>home online.</em>
+        </h1>
+        <p class="hero-sub">Trellis helps small business owners build a real, professional website in minutes — no designers, no developers, no tech headaches.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" id="manualBtn">Build my site free</button>
+          <button class="btn-ghost" id="aiBtn">✦ Let AI build it for me</button>
+        </div>
+        <p class="hero-note">No account. No credit card. Your site lives in your browser until you're ready to launch.</p>
+      </div>
+
+      <div class="hero-visual">
+        <div class="card-stack">
+          <div class="sc sc-back"></div>
+          <div class="sc sc-mid"></div>
+          <div class="sc sc-front">
+            <div class="browser-mockup">
+              <div class="browser-bar">
+                <div class="browser-dots"><span></span><span></span><span></span></div>
+                <div class="browser-url">trellis.app/editor</div>
+              </div>
+              <div class="browser-body">
+                <div class="mock-topbar">
+                  <div class="mock-logo"></div>
+                  <div class="mock-device-btns">
+                    <div class="mock-dbtn active"></div>
+                    <div class="mock-dbtn"></div>
+                    <div class="mock-dbtn"></div>
+                  </div>
+                  <div class="mock-export-btn"></div>
+                </div>
+                <div class="mock-editor">
+                  <div class="mock-sidebar">
+                    <div class="mock-sb-label"></div>
+                    <div class="mock-sb-block"></div>
+                    <div class="mock-sb-block"></div>
+                    <div class="mock-sb-block active"></div>
+                    <div class="mock-sb-block"></div>
+                    <div class="mock-sb-label" style="margin-top:10px"></div>
+                    <div class="mock-sb-block"></div>
+                  </div>
+                  <div class="mock-canvas">
+                    <div class="mock-block mock-navbar-block">
+                      <div class="mock-nb-logo"></div>
+                      <div class="mock-nb-links"><div></div><div></div><div></div></div>
+                    </div>
+                    <div class="mock-block mock-hero-block selected-block">
+                      <div class="mock-hero-h1"></div>
+                      <div class="mock-hero-p"></div>
+                      <div class="mock-hero-btn"></div>
+                      <div class="mock-block-toolbar"><span>↑</span><span>↓</span><span>✕</span></div>
+                    </div>
+                    <div class="mock-block mock-cols-block">
+                      <div class="mock-col"></div>
+                      <div class="mock-col"></div>
+                    </div>
+                    <div class="mock-block mock-footer-block">
+                      <div class="mock-footer-line"></div>
+                    </div>
+                  </div>
+                  <div class="mock-props">
+                    <div class="mock-props-label"></div>
+                    <div class="mock-props-input"></div>
+                    <div class="mock-props-input short"></div>
+                    <div class="mock-swatch-row">
+                      <div class="mock-swatch" style="background:#4A7C59"></div>
+                      <div class="mock-swatch" style="background:#2D2D2D"></div>
+                      <div class="mock-swatch" style="background:#F5EFE6"></div>
+                      <div class="mock-swatch active" style="background:#D4956A"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sticky sticky-1"><span>✓</span> Auto-saved</div>
+        <div class="sticky sticky-2"><span>↩</span> Ctrl+Z works</div>
+        <div class="sticky sticky-3"><span>✦</span> AI builder</div>
+      </div>
+    </div>
+
+    <div class="hero-aside">
+      <em>"No code. No overwhelm. No excuses."</em>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item"><strong>13</strong><span>blocks</span></div>
+      <div class="stat-sep">·</div>
+      <div class="stat-item"><strong>6</strong><span>templates</span></div>
+      <div class="stat-sep">·</div>
+      <div class="stat-item"><strong>1</strong><span>AI builder</span></div>
+      <div class="stat-sep">·</div>
+      <div class="stat-item"><strong>0</strong><span>lines of code</span></div>
+      <div class="stat-sep">·</div>
+      <div class="stat-item"><strong>$0</strong><span>to start</span></div>
+    </div>
+  </div>
+
+  <!-- FEATURES — zigzag -->
+  <section class="features" id="features">
+    <div class="feat-intro">
+      <div class="section-label">What's in it</div>
+      <h2 class="section-h2">Everything you need,<br><em>nothing you don't.</em></h2>
+    </div>
+
+    <div class="feat-row feat-row-normal">
+      <div class="feat-row-text">
+        <div class="feat-num">01</div>
+        <h3>13 blocks, all editable</h3>
+        <p>Navbar, hero, gallery, testimonials, pricing, e-commerce — every section you'd need, already built. Just click to edit the text.</p>
+        <div class="feat-tags">
+          <span class="ftag ftag-warm">Navbar</span>
+          <span class="ftag ftag-green">Hero</span>
+          <span class="ftag ftag-plain">Gallery</span>
+          <span class="ftag ftag-warm">Pricing</span>
+          <span class="ftag ftag-green">Products</span>
+          <span class="ftag ftag-plain">+ 8 more</span>
+        </div>
+      </div>
+      <div class="feat-row-visual">
+        <div class="fv-editor-mini">
+          <div class="fv-em-bar"></div>
+          <div class="fv-em-block fv-em-nav">
+            <div class="fv-em-logo"></div>
+            <div class="fv-em-links"><span></span><span></span></div>
+          </div>
+          <div class="fv-em-block fv-em-hero sel">
+            <div class="fv-em-h"></div>
+            <div class="fv-em-p"></div>
+            <div class="fv-em-btn"></div>
+            <div class="fv-em-handle">✦ editing</div>
+          </div>
+          <div class="fv-em-block fv-em-cols">
+            <div class="fv-em-col"></div>
+            <div class="fv-em-col"></div>
+          </div>
+          <div class="fv-em-block fv-em-foot"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat-row feat-row-flip">
+      <div class="feat-row-visual">
+        <div class="fv-style-demo">
+          <div class="fv-style-label">Background</div>
+          <div class="fv-swatches">
+            <div class="fv-sw" style="background:#FDFAF6;border:1px solid #E0D5C5"></div>
+            <div class="fv-sw sel" style="background:#4A7C59"></div>
+            <div class="fv-sw" style="background:#2D2D2D"></div>
+            <div class="fv-sw" style="background:#D4956A"></div>
+            <div class="fv-sw" style="background:#E8D5B7"></div>
+            <div class="fv-sw fv-sw-plus">+</div>
+          </div>
+          <div class="fv-style-label" style="margin-top:16px">Font</div>
+          <div class="fv-fonts">
+            <div class="fv-font sel" style="font-family:Georgia,serif">Serif</div>
+            <div class="fv-font" style="font-family:monospace">Mono</div>
+            <div class="fv-font">Sans</div>
+          </div>
+          <div class="fv-style-label" style="margin-top:16px">Padding</div>
+          <div class="fv-pads">
+            <div class="fv-pad">S</div>
+            <div class="fv-pad sel">M</div>
+            <div class="fv-pad">L</div>
+          </div>
+        </div>
+      </div>
+      <div class="feat-row-text">
+        <div class="feat-num">02</div>
+        <h3>Style every block your way</h3>
+        <p>Change background, text color, font, padding, and alignment on any block — instantly, without touching code. 12 color swatches and a full color picker.</p>
+        <p class="feat-detail">It updates live as you click. Undo it with Ctrl+Z if you change your mind.</p>
+      </div>
+    </div>
+
+    <div class="feat-row feat-row-normal">
+      <div class="feat-row-text">
+        <div class="feat-num">03</div>
+        <h3>Describe it. We build it.</h3>
+        <p>Type something like "a warm coffee shop in Austin with a menu and customer reviews" and the AI builds the whole site — blocks, content, layout — in about 4 seconds.</p>
+        <p class="feat-detail">Powered by Claude (Anthropic). You can use your own API key.</p>
+      </div>
+      <div class="feat-row-visual">
+        <div class="fv-ai-box">
+          <div class="fv-ai-prompt">"A warm coffee shop in Austin with a menu and reviews"</div>
+          <div class="fv-ai-arrow">↓</div>
+          <div class="fv-ai-blocks">
+            <span>navbar</span><span>hero</span><span>text</span>
+            <span>gallery</span><span>testimonials</span><span>footer</span>
+          </div>
+          <div class="fv-ai-done">Built in 4.2s ✓</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat-export-banner">
+      <div class="feb-text">
+        <div class="feat-num">04</div>
+        <h3>One click. Real HTML. Yours forever.</h3>
+        <p>Export a self-contained <code>.html</code> file with everything baked in — images, fonts, CSS. Host it on GitHub Pages or Netlify for free.</p>
+      </div>
+      <div class="feb-visual">
+        <div class="export-file">
+          <div class="export-icon">⬇</div>
+          <div class="export-name">my-website.html</div>
+          <div class="export-meta">52 KB · all-in-one</div>
+        </div>
+        <svg class="export-arrow-svg" viewBox="0 0 70 24" fill="none">
+          <path d="M5 12 Q25 4 45 12 Q55 16 62 12" stroke="#D4956A" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path d="M57 8 L63 12 L57 16" stroke="#D4956A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <div class="export-targets">
+          <div class="export-target">GitHub Pages</div>
+          <div class="export-target">Netlify</div>
+          <div class="export-target">Any host</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <div class="how-inner">
+      <div class="how-header">
+        <div class="section-label">How it works</div>
+        <h2 class="section-h2">Three steps<br><em>to live.</em></h2>
+      </div>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-content">
+            <h3>Tell us what you're making</h3>
+            <p>Answer three quick questions — site type, vibe, name. We set everything up for you.</p>
+          </div>
+        </div>
+        <div class="how-squig">
+          <svg viewBox="0 0 40 60" fill="none"><path d="M20 5 Q33 18 20 30 Q7 42 20 55" stroke="#C4D9B0" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-content">
+            <h3>Click to edit</h3>
+            <p>Click any text to change it. Add or remove blocks. It feels like Google Docs, not Photoshop.</p>
+          </div>
+        </div>
+        <div class="how-squig">
+          <svg viewBox="0 0 40 60" fill="none"><path d="M20 5 Q33 18 20 30 Q7 42 20 55" stroke="#C4D9B0" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-content">
+            <h3>Export and go live</h3>
+            <p>Download the file and drop it on any host. Or share the preview link. You're done.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing-section" id="pricing">
+    <div class="pricing-inner">
+      <div class="section-label">Pricing</div>
+      <h2 class="section-h2">Honest pricing.<br><em>No gotchas.</em></h2>
+      <p class="pricing-sub">Start free and stay free. Upgrade when you actually need more.</p>
+
+      <div class="pricing-cards">
+        <div class="price-card">
+          <div class="price-tier-name">Free</div>
+          <div class="price-amount"><span class="price-currency">$</span>0</div>
+          <div class="price-period">forever, really</div>
+          <ul class="price-features">
+            <li>✓ Unlimited projects</li>
+            <li>✓ All 13 blocks</li>
+            <li>✓ HTML export</li>
+            <li>✓ 6 templates</li>
+            <li class="muted">✗ AI builder</li>
+            <li class="muted">✗ Custom domain</li>
+          </ul>
+          <button class="price-btn outline" id="priceFreeBtn">Start free →</button>
+        </div>
+
+        <div class="price-card featured">
+          <div class="price-popular-badge">Most popular</div>
+          <div class="price-tier-name">Pro</div>
+          <div class="price-amount"><span class="price-currency">$</span>12<span class="price-mo">/mo</span></div>
+          <div class="price-period">billed monthly</div>
+          <ul class="price-features">
+            <li>✓ Everything in Free</li>
+            <li>✓ AI site builder</li>
+            <li>✓ Custom domain</li>
+            <li>✓ One-click publish</li>
+            <li>✓ Priority support</li>
+            <li>✓ Analytics</li>
+          </ul>
+          <button class="price-btn filled" id="priceProBtn">Try Pro free for 14 days</button>
+        </div>
+
+        <div class="price-card">
+          <div class="price-tier-name">Team</div>
+          <div class="price-amount"><span class="price-currency">$</span>39<span class="price-mo">/mo</span></div>
+          <div class="price-period">up to 5 members</div>
+          <ul class="price-features">
+            <li>✓ Everything in Pro</li>
+            <li>✓ 5 team members</li>
+            <li>✓ Shared projects</li>
+            <li>✓ White-label export</li>
+            <li>✓ Advanced analytics</li>
+            <li>✓ Dedicated support</li>
+          </ul>
+          <button class="price-btn outline" id="priceTeamBtn">Contact us</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <svg class="fcta-sq" viewBox="0 0 300 80" fill="none">
+      <path d="M10 40 Q60 10 110 40 Q160 70 210 40 Q260 10 290 40" stroke="#D4956A" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.5"/>
+    </svg>
+    <div class="fcta-inner">
+      <p class="fcta-eyebrow">Your customers are searching for you right now.</p>
+      <h2>Be there<br><em>when they look.</em></h2>
+      <p class="fcta-sub">No code. No expensive agencies. Trellis gets your business online today — free to start, yours to keep.</p>
+      <button class="btn-primary large" id="fctaBtn">Build my site — it's free</button>
+      <p class="fcta-note">Takes about 2 minutes. No account needed.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">Trellis<span>.</span></div>
+        <p class="footer-tagline">Build your site, beautifully.</p>
+        <p class="footer-made">Made with ✦ and a lot of CSS</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <div class="footer-col-label">Product</div>
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="templates.html">Templates</a>
+          <a href="editor.html">Editor</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-label">Company</div>
+          <a href="#">About</a>
+          <a href="#">Blog</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Trellis. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

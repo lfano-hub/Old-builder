@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trellis — Templates</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="templates.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Trellis<span>.</span></a>
+    <div class="nav-links">
+      <a href="#">Features</a>
+      <a href="#">Pricing</a>
+      <a href="#">Docs</a>
+    </div>
+    <a href="index.html" class="nav-cta" style="text-decoration:none;">← Back</a>
+  </nav>
+
+  <main class="templates-page">
+
+    <div class="templates-header">
+      
+      <h1>Pick a template,<br><em>make it yours.</em></h1>
+      <p>Pick one and make it yours. Every block is editable — change the text, swap colors, add or remove anything.</p>
+      <button class="skip-btn" id="skipTemplateBtn">Start with a blank canvas →</button>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="business">Business</button>
+      <button class="filter-btn" data-filter="store">Store</button>
+      <button class="filter-btn" data-filter="personal">Personal</button>
+      <button class="filter-btn" data-filter="creative">Creative</button>
+    </div>
+
+    <div class="templates-grid" id="templatesGrid">
+
+      <!-- Blank -->
+      <div class="template-card" data-category="personal" data-template="blank">
+        <div class="template-preview tp-blank">
+          <div class="tp-empty-icon">＋</div>
+          <div class="tp-empty-text">Blank canvas</div>
+        </div>
+        <div class="template-info">
+          <div class="template-meta">
+            <span class="template-tag personal">Personal</span>
+          </div>
+          <h3>Blank Canvas</h3>
+          <p>Start with nothing. Full control from the first block.</p>
+          <button class="template-btn" data-template="blank">Start Blank →</button>
+        </div>
+      </div>
+
+      <!-- Personal Brand -->
+      <div class="template-card" data-category="personal" data-template="personal-brand">
+        <div class="template-preview tp-personal">
+          <div class="tp-navbar"><div class="tp-dot"></div><div class="tp-links"><div class="tp-link"></div><div class="tp-link"></div></div></div>
+          <div class="tp-hero-block">
+            <div class="tp-avatar"></div>
+            <div class="tp-line tp-wide tp-dark"></div>
+            <div class="tp-line tp-med"></div>
+          </div>
+          <div class="tp-two-col">
+            <div class="tp-col-block"></div>
+            <div class="tp-col-block"></div>
+          </div>
+          <div class="tp-footer-block"></div>
+        </div>
+        <div class="template-info">
+          <div class="template-meta">
+            <span class="template-tag personal">Personal</span>
+          </div>
+          <h3>Personal Brand</h3>
+          <p>Perfect for creators, freelancers, and anyone building their name online.</p>
+          <button class="template-btn" data-template="personal-brand">Use Template →</button>
+        </div>
+      </div>
+
+      <!-- Local Business -->
+      <div class="template-card" data-category="business" data-template="local-business">
+        <div class="template-preview tp-business">
+          <div class="tp-navbar"><div class="tp-dot tp-blue"></div><div class="tp-links"><div class="tp-link"></div><div class="tp-link"></div><div class="tp-link"></div></div></div>
+          <div class="tp-hero-block tp-hero-blue">
+            <div class="tp-line tp-wide tp-dark"></div>
+            <div class="tp-line tp-med"></div>
+            <div class="tp-btn-mock tp-blue-btn"></div>
+          </div>
+          <div class="tp-three-col">
+            <div class="tp-col-block"></div>
+            <div class="tp-col-block"></div>
+            <div class="tp-col-block"></div>
+          </div>
+          <div class="tp-cta-block"></div>
+          <div class="tp-footer-block tp-dark-footer"></div>
+        </div>
+        <div class="template-info">
+          <div class="template-meta">
+            <span class="template-tag business">Business</span>
+            <span class="template-popular">Popular</span>
+          </div>
+          <h3>Local Business</h3>
+          <p>For restaurants, salons, shops, or any local service that needs a clean web presence.</p>
+          <button class="template-btn" data-template="local-business">Use Template →</button>
+        </div>
+      </div>
+
+      <!-- Online Store -->
+      <div class="template-card" data-category="store" data-template="online-store">
+        <div class="template-preview tp-store">
+          <div class="tp-navbar"><div class="tp-dot tp-dark"></div><div class="tp-links"><div class="tp-link"></div><div class="tp-link"></div></div></div>
+          <div class="tp-hero-block">
+            <div class="tp-line tp-wide tp-dark"></div>
+            <div class="tp-line tp-med"></div>
+            <div class="tp-btn-mock"></div>
+          </div>
+          <div class="tp-products">
+            <div class="tp-product-card"><div class="tp-product-img"></div><div class="tp-line tp-short tp-dark" style="margin:6px auto 3px"></div><div class="tp-line tp-short" style="margin:0 auto"></div></div>
+            <div class="tp-product-card"><div class="tp-product-img"></div><div class="tp-line tp-short tp-dark" style="margin:6px auto 3px"></div><div class="tp-line tp-short" style="margin:0 auto"></div></div>
+            <div class="tp-product-card"><div class="tp-product-img"></div><div class="tp-line tp-short tp-dark" style="margin:6px auto 3px"></div><div class="tp-line tp-short" style="margin:0 auto"></div></div>
+          </div>
+          <div class="tp-footer-block tp-dark-footer"></div>
+        </div>
+        <div class="template-info">
+          <div class="template-meta">
+            <span class="template-tag store">Store</span>
+            <span class="template-popular">Popular</span>
+          </div>
+          <h3>Online Store</h3>
+          <p>Showcase your products with a clean storefront. Great for small shops and makers.</p>
+          <button class="template-btn" data-template="online-store">Use Template →</button>
+        </div>
+      </div>
+
+      <!-- Portfolio -->
+      <div class="template-card" data-category="personal" data-template="portfolio">
+        <div class="template-preview tp-portfolio">
+          <div class="tp-navbar"><div class="tp-dot"></div><div class="tp-links"><div class="tp-link"></div><div class="tp-link"></div></div></div>
+          <div class="tp-hero-block">
+            <div class="tp-line tp-wide tp-dark"></div>
+            <div class="tp-line tp-med"></div>
+          </div>
+          <div class="tp-gallery-mock">
+            <div class="tp-gallery-item"></div>
+            <div class="tp-gallery-item"></div>
+            <div class="tp-gallery-item"></div>
+            <div class="tp-gallery-item"></div>
+          </div>
+          <div class="tp-footer-block tp-dark-footer"></div>
+        </div>
+        <div class="template-info">
+          <div class="template-meta">
+            <span class="template-tag personal">Personal</span>
+          </div>
+          <h3>Portfolio</h3>
+          <p>Show your work beautifully. Ideal for designers, photographers, and developers.</p>
+          <button class="template-btn" data-template="portfolio">Use Template →</button>
+        </div>
+      </div>
+
+      <!-- Event -->
+      <div class="template-card" data-category="business" data-template="event">
+        <div class="template-preview tp-event">
+          <div class="tp-hero-block tp-hero-dark">
+            <div class="tp-line tp-wide tp-white"></div>
+            <div class="tp-line tp-med tp-white-muted"></div>
+            <div class="tp-btn-mock tp-blue-btn"></div>
+          </div>
+          <div class="tp-two-col">
+            <div class="tp-col-block"></div>
+            <div class="tp-col-block"></div>
+          </div>
+          <div class="tp-cta-block"></div>
+        </div>
+        <div class="template-info">
+          <div class="template-meta">
+            <span class="template-tag business">Business</span>
+          </div>
+          <h3>Event Page</h3>
+          <p>Promote a launch, meetup, concert, or any event with a focused single page.</p>
+          <button class="template-btn" data-template="event">Use Template →</button>
+        </div>
+      </div>
+
+      <!-- Restaurant / Cafe -->
+      <div class="template-card" data-category="business" data-template="restaurant">
+        <div class="template-preview tp-restaurant">
+          <div class="tp-navbar"><div class="tp-dot tp-amber"></div><div class="tp-links"><div class="tp-link"></div><div class="tp-link"></div><div class="tp-link"></div></div></div>
+          <div class="tp-hero-block tp-hero-amber">
+            <div class="tp-line tp-wide tp-dark"></div>
+            <div class="tp-line tp-med"></div>
+            <div class="tp-btn-mock tp-amber-btn"></div>
+          </div>
+          <div class="tp-three-col">
+            <div class="tp-col-block tp-amber-col"></div>
+            <div class="tp-col-block tp-amber-col"></div>
+            <div class="tp-col-block tp-amber-col"></div>
+          </div>
+          <div class="tp-footer-block tp-dark-footer"></div>
+        </div>
+        <div class="template-info">
+          <div class="template-meta">
+            <span class="template-tag business">Business</span>
+            <span class="template-popular">🍽 Food</span>
+          </div>
+          <h3>Restaurant & Café</h3>
+          <p>Warm, welcoming, and menu-ready. Great for cafés, restaurants, and food businesses.</p>
+          <button class="template-btn" data-template="restaurant">Use Template →</button>
+        </div>
+      </div>
+
+      <!-- SaaS / App Landing -->
+      <div class="template-card" data-category="business" data-template="saas">
+        <div class="template-preview tp-saas">
+          <div class="tp-navbar"><div class="tp-dot tp-dark"></div><div class="tp-links"><div class="tp-link"></div><div class="tp-link"></div><div class="tp-link"></div></div></div>
+          <div class="tp-hero-block tp-hero-dark">
+            <div class="tp-line tp-wide tp-white"></div>
+            <div class="tp-line tp-med tp-white-muted"></div>
+            <div class="tp-btn-mock tp-sage-btn"></div>
+          </div>
+          <div class="tp-three-col">
+            <div class="tp-col-block"></div>
+            <div class="tp-col-block"></div>
+            <div class="tp-col-block"></div>
+          </div>
+          <div class="tp-pricing-mock">
+            <div class="tp-price-card"></div>
+            <div class="tp-price-card tp-featured-card"></div>
+            <div class="tp-price-card"></div>
+          </div>
+          <div class="tp-footer-block tp-dark-footer"></div>
+        </div>
+        <div class="template-info">
+          <div class="template-meta">
+            <span class="template-tag business">Business</span>
+            <span class="template-popular">🚀 App</span>
+          </div>
+          <h3>SaaS / App</h3>
+          <p>Features, pricing, and CTA — everything a product launch needs in one clean page.</p>
+          <button class="template-btn" data-template="saas">Use Template →</button>
+        </div>
+      </div>
+
+      <!-- Link in Bio -->
+      <div class="template-card" data-category="personal" data-template="link-in-bio">
+        <div class="template-preview tp-linkinbio">
+          <div class="tp-bio-avatar"></div>
+          <div class="tp-line tp-med tp-dark" style="margin:6px auto;"></div>
+          <div class="tp-line tp-short" style="margin:0 auto 10px;"></div>
+          <div class="tp-bio-link"></div>
+          <div class="tp-bio-link"></div>
+          <div class="tp-bio-link"></div>
+          <div class="tp-bio-link"></div>
+        </div>
+        <div class="template-info">
+          <div class="template-meta">
+            <span class="template-tag personal">Personal</span>
+            <span class="template-popular">📲 Social</span>
+          </div>
+          <h3>Link in Bio</h3>
+          <p>One page, all your links. Perfect for Instagram, TikTok, or any social profile.</p>
+          <button class="template-btn" data-template="link-in-bio">Use Template →</button>
+        </div>
+      </div>
+
+      <!-- Coaching / Consultant -->
+      <div class="template-card" data-category="business" data-template="coaching">
+        <div class="template-preview tp-coaching">
+          <div class="tp-navbar"><div class="tp-dot tp-sage"></div><div class="tp-links"><div class="tp-link"></div><div class="tp-link"></div></div></div>
+          <div class="tp-hero-block">
+            <div class="tp-avatar tp-sage-avatar"></div>
+            <div class="tp-line tp-wide tp-dark"></div>
+            <div class="tp-line tp-med"></div>
+            <div class="tp-btn-mock tp-sage-btn"></div>
+          </div>
+          <div class="tp-testimonials-mock">
+            <div class="tp-tcard"></div>
+            <div class="tp-tcard"></div>
+            <div class="tp-tcard"></div>
+          </div>
+          <div class="tp-footer-block"></div>
+        </div>
+        <div class="template-info">
+          <div class="template-meta">
+            <span class="template-tag business">Business</span>
+            <span class="template-popular">💼 Services</span>
+          </div>
+          <h3>Coaching / Consultant</h3>
+          <p>Build credibility and book clients. Includes bio, services, testimonials, and CTA.</p>
+          <button class="template-btn" data-template="coaching">Use Template →</button>
+        </div>
+      </div>
+
+      <!-- Coming Soon -->
+      <div class="template-card" data-category="personal" data-template="coming-soon">
+        <div class="template-preview tp-comingsoon">
+          <div class="tp-hero-block tp-hero-dark" style="flex:1;justify-content:center;">
+            <div class="tp-line tp-wide tp-white"></div>
+            <div class="tp-line tp-med tp-white-muted"></div>
+            <div class="tp-countdown-mock">
+              <div class="tp-count-box"></div>
+              <div class="tp-count-box"></div>
+              <div class="tp-count-box"></div>
+              <div class="tp-count-box"></div>
+            </div>
+            <div class="tp-email-mock"></div>
+          </div>
+        </div>
+        <div class="template-info">
+          <div class="template-meta">
+            <span class="template-tag personal">Personal</span>
+            <span class="template-popular">⏳ Launch</span>
+          </div>
+          <h3>Coming Soon</h3>
+          <p>Build hype before launch. Email capture, countdown, and a bold announcement.</p>
+          <button class="template-btn" data-template="coming-soon">Use Template →</button>
+        </div>
+      </div>
+
+      <!-- Wedding / Event -->
+      <div class="template-card" data-category="creative" data-template="wedding">
+        <div class="template-preview tp-wedding">
+          <div class="tp-hero-block tp-hero-blush">
+            <div class="tp-line tp-wide tp-dark"></div>
+            <div class="tp-line tp-med"></div>
+            <div class="tp-btn-mock tp-blush-btn"></div>
+          </div>
+          <div class="tp-two-col">
+            <div class="tp-col-block tp-blush-col"></div>
+            <div class="tp-col-block tp-blush-col"></div>
+          </div>
+          <div class="tp-footer-block"></div>
+        </div>
+        <div class="template-info">
+          <div class="template-meta">
+            <span class="template-tag creative">Creative</span>
+            <span class="template-popular">💍 Wedding</span>
+          </div>
+          <h3>Wedding / Special Event</h3>
+          <p>Elegant and personal. Perfect for weddings, anniversaries, and milestone celebrations.</p>
+          <button class="template-btn" data-template="wedding">Use Template →</button>
+        </div>
+      </div>
+
+      <!-- Podcast / Newsletter -->
+      <div class="template-card" data-category="creative" data-template="podcast">
+        <div class="template-preview tp-podcast">
+          <div class="tp-navbar"><div class="tp-dot"></div><div class="tp-links"><div class="tp-link"></div><div class="tp-link"></div></div></div>
+          <div class="tp-hero-block">
+            <div class="tp-podcast-art"></div>
+            <div class="tp-line tp-med tp-dark" style="margin:6px auto 3px;"></div>
+            <div class="tp-line tp-short" style="margin:0 auto 8px;"></div>
+            <div class="tp-btn-mock"></div>
+          </div>
+          <div class="tp-episode-list">
+            <div class="tp-episode"></div>
+            <div class="tp-episode"></div>
+            <div class="tp-episode"></div>
+          </div>
+          <div class="tp-footer-block tp-dark-footer"></div>
+        </div>
+        <div class="template-info">
+          <div class="template-meta">
+            <span class="template-tag creative">Creative</span>
+            <span class="template-popular">🎙 Media</span>
+          </div>
+          <h3>Podcast / Newsletter</h3>
+          <p>Grow your audience with a clean media page. Episodes, subscribe CTA, and social links.</p>
+          <button class="template-btn" data-template="podcast">Use Template →</button>
+        </div>
+      </div>
+
+      <!-- Photography -->
+      <div class="template-card" data-category="creative" data-template="photography">
+        <div class="template-preview tp-photo">
+          <div class="tp-navbar"><div class="tp-dot"></div><div class="tp-links"><div class="tp-link"></div><div class="tp-link"></div></div></div>
+          <div class="tp-photo-hero"></div>
+          <div class="tp-photo-grid">
+            <div class="tp-photo-item tp-photo-tall"></div>
+            <div class="tp-photo-item"></div>
+            <div class="tp-photo-item"></div>
+            <div class="tp-photo-item tp-photo-wide"></div>
+          </div>
+          <div class="tp-footer-block tp-dark-footer"></div>
+        </div>
+        <div class="template-info">
+          <div class="template-meta">
+            <span class="template-tag creative">Creative</span>
+            <span class="template-popular">📷 Photo</span>
+          </div>
+          <h3>Photography</h3>
+          <p>Let your images do the talking. Full-bleed gallery with booking and contact.</p>
+          <button class="template-btn" data-template="photography">Use Template →</button>
+        </div>
+      </div>
+
+    </div>
+
+  <script src="templates.js"></script>
+</body>
+</html>

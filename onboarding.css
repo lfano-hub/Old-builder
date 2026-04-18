@@ -1,0 +1,295 @@
+.onboarding-body {
+  min-height: 100vh;
+  background: #F2F6FB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* ── SHELL ────────────────────────────── */
+.ob-shell {
+  width: 100%;
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+/* ── LOGO ─────────────────────────────── */
+.ob-logo {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: #0D0D0D;
+  text-decoration: none;
+}
+.ob-logo span { color: #0A84FF; }
+
+/* ── PROGRESS ─────────────────────────── */
+.ob-progress {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.ob-progress-bar {
+  width: 100%;
+  max-width: 400px;
+  height: 4px;
+  background: #E5EEF8;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.ob-progress-fill {
+  height: 100%;
+  background: #0A84FF;
+  border-radius: 99px;
+  transition: width 0.4s ease;
+  width: 33%;
+}
+
+.ob-progress-label {
+  font-size: 12px;
+  color: #A0A0A8;
+  letter-spacing: 0.04em;
+}
+
+/* ── STEPS ────────────────────────────── */
+.ob-steps {
+  width: 100%;
+  position: relative;
+  min-height: 380px;
+}
+
+.ob-step {
+  display: none;
+  animation: stepIn 0.25s ease;
+}
+.ob-step.active { display: block; }
+
+@keyframes stepIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.ob-step-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.ob-step-header h1 {
+  font-size: clamp(22px, 4vw, 30px);
+  font-weight: 700;
+  letter-spacing: -0.6px;
+  color: #0D0D0D;
+  margin-bottom: 8px;
+}
+.ob-step-header p {
+  font-size: 15px;
+  color: #6E6E73;
+  line-height: 1.5;
+}
+
+/* ── STEP 1: SITE TYPE GRID ───────────── */
+.ob-options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.ob-option {
+  background: white;
+  border: 1.5px solid #EBEBF0;
+  border-radius: 14px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, transform 0.15s, box-shadow 0.15s;
+  font-family: inherit;
+  text-align: center;
+}
+.ob-option:hover {
+  border-color: #C7E0FF;
+  background: #F7FAFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(10,132,255,0.08);
+}
+.ob-option.selected {
+  border-color: #0A84FF;
+  background: #EBF4FF;
+  box-shadow: 0 0 0 3px rgba(10,132,255,0.1);
+}
+
+.ob-option-icon  { font-size: 26px; margin-bottom: 2px; }
+.ob-option-label { font-size: 14px; font-weight: 600; color: #0D0D0D; }
+.ob-option-sub   { font-size: 11.5px; color: #6E6E73; line-height: 1.4; }
+
+/* ── STEP 2: STYLE GRID ───────────────── */
+.ob-style-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.ob-style-option {
+  background: white;
+  border: 1.5px solid #EBEBF0;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  font-family: inherit;
+  text-align: left;
+}
+.ob-style-option:hover {
+  border-color: #C7E0FF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(10,132,255,0.08);
+}
+.ob-style-option.selected {
+  border-color: #0A84FF;
+  box-shadow: 0 0 0 3px rgba(10,132,255,0.1);
+}
+
+.ob-style-preview {
+  height: 110px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ob-sp-bar  { height: 6px; border-radius: 3px; width: 100%; }
+.ob-sp-hero {
+  flex: 1; border-radius: 6px; padding: 8px;
+  display: flex; flex-direction: column; gap: 5px; align-items: center; justify-content: center;
+}
+.ob-sp-line { height: 4px; border-radius: 99px; }
+.ob-sp-btn  { width: 36px; height: 12px; border-radius: 3px; margin-top: 4px; }
+
+.ob-style-info {
+  padding: 12px 14px;
+  border-top: 1px solid #F0F0F5;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.ob-style-info strong { font-size: 13px; font-weight: 700; color: #0D0D0D; }
+.ob-style-info span   { font-size: 12px; color: #6E6E73; }
+
+/* ── STEP 3: NAME FORM ────────────────── */
+.ob-name-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ob-field { display: flex; flex-direction: column; gap: 6px; }
+
+.ob-field-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1d1d1f;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ob-optional {
+  font-size: 11px;
+  font-weight: 400;
+  color: #A0A0A8;
+}
+
+.ob-input {
+  padding: 13px 16px;
+  border-radius: 12px;
+  border: 1.5px solid #E5E5EA;
+  font-size: 15px;
+  font-family: inherit;
+  color: #0D0D0D;
+  background: white;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.ob-input:focus {
+  border-color: #0A84FF;
+  box-shadow: 0 0 0 3px rgba(10,132,255,0.1);
+}
+.ob-input::placeholder { color: #B8C0CC; }
+
+/* Live preview card */
+.ob-preview-card {
+  background: #0D0D0D;
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-top: 4px;
+  transition: background 0.3s;
+}
+.ob-preview-logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.3px;
+  margin-bottom: 6px;
+}
+.ob-preview-tagline {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.5;
+}
+
+/* ── NAV BUTTONS ──────────────────────── */
+.ob-nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ob-btn-back {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  color: #6E6E73;
+  cursor: pointer;
+  padding: 10px 0;
+  transition: color 0.15s;
+}
+.ob-btn-back:hover { color: #0D0D0D; }
+
+.ob-btn-next {
+  padding: 14px 32px;
+  background: #0A84FF;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+}
+.ob-btn-next:hover:not(:disabled) {
+  background: #0070E0;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(10,132,255,0.25);
+}
+.ob-btn-next:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.ob-btn-next.last { background: #34C759; }
+.ob-btn-next.last:hover:not(:disabled) { background: #28A745; box-shadow: 0 6px 20px rgba(52,199,89,0.25); }
+
+@media (max-width: 480px) {
+  .ob-options-grid { grid-template-columns: repeat(2, 1fr); }
+  .ob-style-grid   { grid-template-columns: 1fr; }
+}
